@@ -106,11 +106,12 @@ function configure_network() {
     fi
 
     # only one ping -c 1, ping gets stuck if -c 5
-    ping -c 1 -i 2 -W 5 -w 30 $PING_HOSTNAME
-    if [ $? -ne 0 ]; then
-        echo "Network ping check failed. Cannot continue."
-        exit 1
-    fi
+    # ping -c 1 -i 2 -W 5 -w 30 $PING_HOSTNAME
+    # if [ $? -ne 0 ]; then
+    #  echo "Network ping check failed. Cannot continue."
+    echo "Assuming that the Network is working..."
+    #    exit 1
+    # fi
 }
 
 function facts_commons() {
